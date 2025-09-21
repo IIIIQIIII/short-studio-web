@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short Studio</title>
+    <title>Blog - Short Studio</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -92,6 +92,14 @@
             color: #000000;
         }
 
+        .nav-link.active {
+            color: #000000;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
         .logo {
             font-size: 24px;
             font-weight: 600;
@@ -118,327 +126,15 @@
             border-color: rgba(0, 0, 0, 0.3);
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 25%, #f0f0f0 50%, #e8e8e8 75%, #f5f5f7 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            text-align: center;
-            z-index: 2;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-title {
-            font-size: clamp(48px, 8vw, 96px);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 20%, #4a4a4a 40%, #7a7a7a 60%, #999999 80%, #b3b3b3 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -2px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(18px, 3vw, 28px);
-            font-weight: 400;
-            color: #6e6e73;
-            margin-bottom: 40px;
-            line-height: 1.3;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #000000;
-            color: #ffffff;
-            padding: 16px 32px;
-            border-radius: 980px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background: #333333;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-            background: #ffffff;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
-            margin-top: 60px;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 40px 30px;
-            border-radius: 18px;
-            background: #f5f5f7;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            background: #ffffff;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #4a4a4a 50%, #7a7a7a 75%, #999999 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .feature-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #1d1d1f;
-        }
-
-        .feature-description {
-            font-size: 16px;
-            color: #6e6e73;
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        footer {
-            background: #000000;
-            color: #ffffff;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 20px;
-        }
-
-        .footer-logo {
-            font-size: 20px;
-            font-weight: 600;
-            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 25%, #b3b3b3 50%, #8a8a8a 75%, #666666 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-
-        .footer-text {
-            color: #6e6e73;
-            font-size: 14px;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-container {
-                padding: 16px 0;
-            }
-
-            .hero {
-                padding: 80px 20px;
-            }
-
-            .features {
-                padding: 60px 20px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        /* Video Showcase Section - Apple UI Style */
-        .video-showcase {
-            padding: 120px 0;
-            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f5f5f7 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .video-showcase::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .video-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        .video-title {
-            font-size: clamp(32px, 5vw, 56px);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #4a4a4a 50%, #7a7a7a 75%, #999999 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -1px;
-        }
-
-        .video-subtitle {
-            font-size: clamp(16px, 2.5vw, 21px);
-            font-weight: 400;
-            color: #6e6e73;
-            margin-bottom: 60px;
-            line-height: 1.4;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .video-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 40px;
-            perspective: 1000px;
-        }
-
-        .video-container {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 
-                0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                0 0 0 1px rgba(0, 0, 0, 0.1),
-                0 0 0 4px rgba(255, 255, 255, 0.1);
-            transform: rotateY(-5deg) rotateX(2deg);
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-            background: #000;
-        }
-
-        .video-container:hover {
-            transform: rotateY(0deg) rotateX(0deg) scale(1.02);
-            box-shadow: 
-                0 35px 60px -15px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(0, 0, 0, 0.15),
-                0 0 0 6px rgba(255, 255, 255, 0.15);
-        }
-
-        .video-container iframe {
-            display: block;
-            border-radius: 20px;
-            border: none;
-        }
-
-        .video-info {
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .video-work-title {
-            font-size: clamp(24px, 3.5vw, 32px);
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #1d1d1f;
-            letter-spacing: -0.5px;
-        }
-
-        .video-description {
-            font-size: clamp(14px, 2vw, 18px);
-            color: #6e6e73;
-            line-height: 1.5;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* Mobile Video Container Adjustments */
-        @media (max-width: 768px) {
-            .video-showcase {
-                padding: 80px 0;
-            }
-
-            .video-container {
-                transform: none;
-                border-radius: 16px;
-                box-shadow: 
-                    0 15px 30px -10px rgba(0, 0, 0, 0.2),
-                    0 0 0 1px rgba(0, 0, 0, 0.1);
-            }
-
-            .video-container:hover {
-                transform: scale(1.01);
-                box-shadow: 
-                    0 20px 40px -15px rgba(0, 0, 0, 0.25),
-                    0 0 0 1px rgba(0, 0, 0, 0.15);
-            }
-
-            .video-container iframe {
-                border-radius: 12px;
-            }
-
-            .video-wrapper {
-                margin-bottom: 30px;
-            }
-        }
-
-        /* Chinese text styling */
-        [lang="zh-CN"] {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-        }
-
-        /* Blog Section - Apple UI Style */
-        .blog {
-            padding: 120px 0;
+        /* Blog Header */
+        .blog-header {
+            padding: 140px 0 80px;
             background: linear-gradient(135deg, #ffffff 0%, #f8f8fa 25%, #f5f5f7 50%, #f8f8fa 75%, #ffffff 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .blog::before {
+        .blog-header::before {
             content: '';
             position: absolute;
             top: 0;
@@ -449,32 +145,39 @@
             pointer-events: none;
         }
 
-        .blog-header {
+        .blog-header-content {
             text-align: center;
             max-width: 800px;
-            margin: 0 auto 80px;
-            animation: fadeInUp 1s ease-out 0.9s both;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .blog-title {
-            font-size: clamp(32px, 5vw, 56px);
+            font-size: clamp(48px, 8vw, 72px);
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #4a4a4a 50%, #7a7a7a 75%, #999999 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -1px;
+            letter-spacing: -2px;
         }
 
         .blog-subtitle {
-            font-size: clamp(16px, 2.5vw, 21px);
+            font-size: clamp(18px, 3vw, 24px);
             font-weight: 400;
             color: #6e6e73;
             line-height: 1.4;
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* Blog Content */
+        .blog-content {
+            padding: 80px 0;
+            background: #ffffff;
         }
 
         .blog-grid {
@@ -492,7 +195,6 @@
                 0 10px 30px -10px rgba(0, 0, 0, 0.1),
                 0 0 0 1px rgba(0, 0, 0, 0.05);
             transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-            animation: fadeInUp 1s ease-out 1.2s both;
         }
 
         .blog-card:hover {
@@ -500,14 +202,6 @@
             box-shadow: 
                 0 25px 50px -15px rgba(0, 0, 0, 0.15),
                 0 0 0 1px rgba(0, 0, 0, 0.08);
-        }
-
-        .blog-card:nth-child(2) {
-            animation-delay: 1.4s;
-        }
-
-        .blog-card:nth-child(3) {
-            animation-delay: 1.6s;
         }
 
         .blog-image {
@@ -536,7 +230,7 @@
             z-index: 1;
         }
 
-        .blog-content {
+        .blog-content-inner {
             padding: 30px;
         }
 
@@ -606,27 +300,136 @@
             transform: translateX(3px);
         }
 
-        .blog-cta {
+        /* Blog Post Detail */
+        .blog-post-detail {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post-header {
+            margin-bottom: 40px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .blog-post-title-detail {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1d1d1f;
+            letter-spacing: -1px;
+        }
+
+        .blog-post-content {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #1d1d1f;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-post-content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: #1d1d1f;
+        }
+
+        /* Back to Home */
+        .back-to-home {
             text-align: center;
-            animation: fadeInUp 1s ease-out 1.8s both;
+            margin-top: 60px;
         }
 
-        .blog-cta .cta-button {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #4a4a4a 50%, #7a7a7a 75%, #999999 100%);
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .blog-cta .cta-button:hover {
-            background: linear-gradient(135deg, #333333 0%, #4a4a4a 25%, #7a7a7a 50%, #999999 75%, #b3b3b3 100%);
+        .back-button::before {
+            content: '←';
+            margin-right: 8px;
+            transition: transform 0.3s ease;
         }
 
-        /* Mobile Blog Section Adjustments */
+        .back-button:hover {
+            color: #0077ed;
+        }
+
+        .back-button:hover::before {
+            transform: translateX(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 25%, #b3b3b3 50%, #8a8a8a 75%, #666666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            color: #6e6e73;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .blog {
-                padding: 80px 0;
+            .nav-container {
+                padding: 16px 0;
             }
 
             .blog-header {
-                margin-bottom: 60px;
+                padding: 100px 0 60px;
+            }
+
+            .blog-content {
+                padding: 60px 0;
             }
 
             .blog-grid {
@@ -642,7 +445,7 @@
                 height: 160px;
             }
 
-            .blog-content {
+            .blog-content-inner {
                 padding: 24px;
             }
 
@@ -653,19 +456,23 @@
             .blog-excerpt {
                 font-size: 15px;
             }
+
+            .blog-post-detail {
+                padding: 40px 20px;
+            }
+
+            .blog-post-title-detail {
+                font-size: 28px;
+            }
+
+            .blog-post-content {
+                font-size: 16px;
+            }
         }
 
-        /* Blog card stagger animation on scroll */
-        @media (prefers-reduced-motion: no-preference) {
-            .blog-card {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            .blog-card.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Chinese text styling */
+        [lang="zh-CN"] {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
         }
     </style>
 </head>
@@ -677,7 +484,8 @@
                 <div class="logo" data-en="Short Studio" data-zh="Short Studio">Short Studio</div>
                 <div class="nav-right">
                     <div class="nav-links">
-                        <a href="blog.html" class="nav-link" data-en="Blog" data-zh="博客">Blog</a>
+                        <a href="index.html" class="nav-link" data-en="Home" data-zh="首页">Home</a>
+                        <a href="blog.html" class="nav-link active" data-en="Blog" data-zh="博客">Blog</a>
                     </div>
                     <button class="language-toggle" onclick="toggleLanguage()">中文</button>
                 </div>
@@ -685,59 +493,25 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Blog Header -->
+    <section class="blog-header">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title" data-en="Short Studio" data-zh="短剧工作室">Short Studio</h1>
-                <p class="hero-subtitle" data-en="Create compelling short dramas with professional tools" data-zh="使用专业工具创作引人入胜的短剧">Create compelling short dramas with professional tools</p>
-                <button class="cta-button" data-en="Get Started" data-zh="开始创作">Get Started</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Showcase Section -->
-    <section class="video-showcase">
-        <div class="container">
-            <div class="video-content">
-                <h2 class="video-title" data-en="Official Demo" data-zh="官方演示">Official Demo</h2>
-                <p class="video-subtitle" data-en="Experience our latest stop-motion animation masterpiece" data-zh="体验我们最新的定格动画杰作">Experience our latest stop-motion animation masterpiece</p>
-                <div class="video-wrapper">
-                    <div class="video-container">
-                        <iframe 
-                            width="315" 
-                            height="576" 
-                            src="https://www.youtube.com/embed/IwB7sz24RYE" 
-                            title="【定格动画】周越深上交工资卡！《我在八零年代当后妈》名场面神还原 - 「你管钱，我管你」" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-work-title" data-en="I Was a Stepmother in the 80s" data-zh="我在八零年代当后妈">I Was a Stepmother in the 80s</h3>
-                    <p class="video-description" data-en="A stunning stop-motion animation recreation of iconic scenes from our popular drama series" data-zh="我们热门剧集系列中标志性场景的精美定格动画重现">A stunning stop-motion animation recreation of iconic scenes from our popular drama series</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="blog">
-        <div class="container">
-            <div class="blog-header">
-                <h2 class="blog-title" data-en="Latest Stories" data-zh="最新故事">Latest Stories</h2>
+            <div class="blog-header-content">
+                <h1 class="blog-title" data-en="Blog" data-zh="博客">Blog</h1>
                 <p class="blog-subtitle" data-en="Insights, updates, and behind-the-scenes from our creative journey" data-zh="来自我们创意之旅的见解、更新和幕后花絮">Insights, updates, and behind-the-scenes from our creative journey</p>
             </div>
-            
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
             <div class="blog-grid">
                 <article class="blog-card">
                     <div class="blog-image">
                         <div class="blog-image-placeholder">🎬</div>
                     </div>
-                    <div class="blog-content">
+                    <div class="blog-content-inner">
                         <div class="blog-meta">
                             <span class="blog-date" data-en="Dec 15, 2024" data-zh="2024年12月15日">Dec 15, 2024</span>
                             <span class="blog-category" data-en="Production" data-zh="制作">Production</span>
@@ -752,7 +526,7 @@
                     <div class="blog-image">
                         <div class="blog-image-placeholder">🎭</div>
                     </div>
-                    <div class="blog-content">
+                    <div class="blog-content-inner">
                         <div class="blog-meta">
                             <span class="blog-date" data-en="Dec 10, 2024" data-zh="2024年12月10日">Dec 10, 2024</span>
                             <span class="blog-category" data-zh="幕后花絮">Behind the Scenes</span>
@@ -765,9 +539,69 @@
 
                 <article class="blog-card">
                     <div class="blog-image">
+                        <div class="blog-image-placeholder">🚀</div>
+                    </div>
+                    <div class="blog-content-inner">
+                        <div class="blog-meta">
+                            <span class="blog-date" data-en="Dec 5, 2024" data-zh="2024年12月5日">Dec 5, 2024</span>
+                            <span class="blog-category" data-en="Technology" data-zh="技术">Technology</span>
+                        </div>
+                        <h3 class="blog-post-title" data-en="Future of Short Drama: AI and Innovation" data-zh="短剧的未来：AI与创新">Future of Short Drama: AI and Innovation</h3>
+                        <p class="blog-excerpt" data-en="Exploring how artificial intelligence is revolutionizing the way we create and consume short-form content." data-zh="探索人工智能如何彻底改变我们创建和消费短视频内容的方式。">Exploring how artificial intelligence is revolutionizing the way we create and consume short-form content.</p>
+                        <a href="#" class="blog-read-more" data-en="Read More" data-zh="阅读更多">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder">📱</div>
+                    </div>
+                    <div class="blog-content-inner">
+                        <div class="blog-meta">
+                            <span class="blog-date" data-en="Nov 28, 2024" data-zh="2024年11月28日">Nov 28, 2024</span>
+                            <span class="blog-category" data-en="Marketing" data-zh="营销">Marketing</span>
+                        </div>
+                        <h3 class="blog-post-title" data-en="Marketing Strategies for Short Drama Success" data-zh="短剧成功的营销策略">Marketing Strategies for Short Drama Success</h3>
+                        <p class="blog-excerpt" data-en="Learn how to effectively promote your short dramas and reach your target audience in the crowded digital marketplace." data-zh="学习如何在拥挤的数字市场中有效推广您的短剧并触达目标受众。">Learn how to effectively promote your short dramas and reach your target audience in the crowded digital marketplace.</p>
+                        <a href="#" class="blog-read-more" data-en="Read More" data-zh="阅读更多">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder">🎨</div>
+                    </div>
+                    <div class="blog-content-inner">
+                        <div class="blog-meta">
+                            <span class="blog-date" data-en="Nov 20, 2024" data-zh="2024年11月20日">Nov 20, 2024</span>
+                            <span class="blog-category" data-en="Creative" data-zh="创意">Creative</span>
+                        </div>
+                        <h3 class="blog-post-title" data-en="Character Development in Short Form Content" data-zh="短视频内容中的角色发展">Character Development in Short Form Content</h3>
+                        <p class="blog-excerpt" data-en="Master the art of creating compelling characters that resonate with audiences in limited screen time." data-zh="掌握在有限屏幕时间内创建与观众产生共鸣的引人入胜角色的艺术。">Master the art of creating compelling characters that resonate with audiences in limited screen time.</p>
+                        <a href="#" class="blog-read-more" data-en="Read More" data-zh="阅读更多">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder">📊</div>
+                    </div>
+                    <div class="blog-content-inner">
+                        <div class="blog-meta">
+                            <span class="blog-date" data-en="Nov 15, 2024" data-zh="2024年11月15日">Nov 15, 2024</span>
+                            <span class="blog-category" data-en="Analytics" data-zh="分析">Analytics</span>
+                        </div>
+                        <h3 class="blog-post-title" data-en="Data-Driven Storytelling: Analytics for Short Dramas" data-zh="数据驱动的叙事：短剧分析">Data-Driven Storytelling: Analytics for Short Dramas</h3>
+                        <p class="blog-excerpt" data-en="How to use viewer data and analytics to improve your short drama content and increase engagement." data-zh="如何使用观众数据和分析来改进您的短剧内容并提高参与度。">How to use viewer data and analytics to improve your short drama content and increase engagement.</p>
+                        <a href="#" class="blog-read-more" data-en="Read More" data-zh="阅读更多">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
                         <img src="https://github.com/HumanAIGC/wan-animate/raw/refs/heads/main/content/aa/arch.png" alt="Wan-Animate Architecture" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="blog-content">
+                    <div class="blog-content-inner">
                         <div class="blog-meta">
                             <span class="blog-date" data-en="Sep 22, 2024" data-zh="2024年9月22日">Sep 22, 2024</span>
                             <span class="blog-category" data-en="Animation" data-zh="动画">Animation</span>
@@ -779,31 +613,8 @@
                 </article>
             </div>
 
-            <div class="blog-cta">
-                <button class="cta-button" data-en="View All Stories" data-zh="查看所有故事">View All Stories</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎬</div>
-                    <h3 class="feature-title" data-en="Professional Production" data-zh="专业制作">Professional Production</h3>
-                    <p class="feature-description" data-en="High-quality tools for creating professional short dramas" data-zh="用于创作专业短剧的高质量工具">High-quality tools for creating professional short dramas</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title" data-en="Fast Workflow" data-zh="快速工作流">Fast Workflow</h3>
-                    <p class="feature-description" data-en="Streamlined process for efficient content creation" data-zh="高效内容创作的简化流程">Streamlined process for efficient content creation</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title" data-en="Target Audience" data-zh="目标受众">Target Audience</h3>
-                    <p class="feature-description" data-en="Reach your audience with compelling storytelling" data-zh="通过引人入胜的故事讲述触达受众">Reach your audience with compelling storytelling</p>
-                </div>
+            <div class="back-to-home">
+                <a href="index.html" class="back-button" data-en="Back to Home" data-zh="返回首页">Back to Home</a>
             </div>
         </div>
     </section>
@@ -840,15 +651,6 @@
             });
         }
 
-        // Smooth scrolling for CTA button
-        document.querySelector('.cta-button').addEventListener('click', function() {
-            const featuresSection = document.querySelector('.features');
-            featuresSection.scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Blog link navigation - let the default href behavior handle the navigation to blog.html
-        // No need for JavaScript intervention since we want actual page navigation
-
         // Add scroll effect to navigation
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
@@ -861,28 +663,8 @@
             }
         });
 
-        // Blog card scroll animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all blog cards
+        // Add click handlers for blog read more links
         document.addEventListener('DOMContentLoaded', function() {
-            const blogCards = document.querySelectorAll('.blog-card');
-            blogCards.forEach(card => {
-                observer.observe(card);
-            });
-
-            // Add click handlers for blog read more links
             const readMoreLinks = document.querySelectorAll('.blog-read-more');
             readMoreLinks.forEach(link => {
                 // Check if this is the Wan-Animate link
@@ -895,18 +677,9 @@
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     // Create a subtle notification instead of alert
-                    showNotification('Blog post would open here in a full implementation');
+                    showNotification('Full blog post would open here in a complete implementation');
                 });
             });
-
-            // Add click handler for blog CTA button
-            const blogCtaButton = document.querySelector('.blog-cta .cta-button');
-            if (blogCtaButton) {
-                blogCtaButton.addEventListener('click', function() {
-                    // Navigate to blog page
-                    window.location.href = 'blog.html';
-                });
-            }
         });
 
         // Notification function for user feedback
