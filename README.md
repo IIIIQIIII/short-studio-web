@@ -1,94 +1,94 @@
 # Short Studio Web
 
-一个专业的短剧工作室网站，采用Apple UI设计风格，展示我们的创意作品和官方演示。
+A professional short drama studio website featuring Apple UI design style, showcasing our creative works and official demos.
 
-## 🌟 特性
+## 🌟 Features
 
-- 🎨 **Apple UI设计风格** - 采用苹果公司的设计语言，简洁优雅
-- 📱 **响应式设计** - 完美适配桌面端和移动端
-- 🌐 **多语言支持** - 支持中英文切换
-- 🎬 **视频展示** - 官方演示视频，采用3D效果和精美动画
-- ⚡ **现代技术栈** - 纯HTML、CSS和JavaScript构建
+- 🎨 **Apple UI Design Style** - Clean and elegant design following Apple's design language
+- 📱 **Responsive Design** - Perfectly adapted for desktop and mobile devices
+- 🌐 **Multilingual Support** - Supports Chinese and English language switching
+- 🎬 **Video Showcase** - Official demo video with 3D effects and beautiful animations
+- ⚡ **Modern Tech Stack** - Built with pure HTML, CSS, and JavaScript
 
-## 📁 项目结构
+## 📁 Project Structure
 
 ```
 short-studio-web/
-├── index.html          # 主页面
-├── favicon.ico         # 网站图标
-├── favicon.png         # PNG格式图标
-├── favicon.svg         # SVG格式图标
-└── README.md           # 项目说明文档
+├── index.html          # Main page
+├── favicon.ico         # Website icon
+├── favicon.png         # PNG format icon
+├── favicon.svg         # SVG format icon
+└── README.md           # Project documentation
 ```
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 本地运行
+### Local Development
 
-1. 克隆项目到本地
+1. Clone the project to your local machine
 ```bash
 git clone https://github.com/IIIIQIIII/short-studio-web.git
 cd short-studio-web
 ```
 
-2. 打开 `index.html` 文件
+2. Open the `index.html` file
 ```bash
-# 使用浏览器打开
+# Open with browser
 open index.html
 ```
 
-### 部署到GitHub Pages
+### Deploy to GitHub Pages
 
-本项目可以直接部署到GitHub Pages：
+This project can be directly deployed to GitHub Pages:
 
-1. 确保所有文件都在 `main` 分支
-2. 在GitHub仓库设置中启用GitHub Pages
-3. 选择 `main` 分支作为源
-4. 访问提供的URL
+1. Ensure all files are in the `main` branch
+2. Enable GitHub Pages in repository settings
+3. Select `main` branch as the source
+4. Visit the provided URL
 
-## 🎯 主要功能
+## 🎯 Main Features
 
-### 1. 导航栏
-- 固定在页面顶部
-- 支持毛玻璃效果
-- 中英文语言切换
-- 响应式设计
+### 1. Navigation Bar
+- Fixed at the top of the page
+- Frosted glass effect support
+- Chinese-English language switching
+- Responsive design
 
-### 2. 主页区域
-- 全屏英雄区域
-- 渐变背景效果
-- 动态文字效果
-- 行动号召按钮
+### 2. Hero Section
+- Full-screen hero area
+- Gradient background effects
+- Dynamic text effects
+- Call-to-action button
 
-### 3. 视频展示
-- YouTube视频嵌入
-- 3D旋转效果
-- 悬停动画
-- Apple风格阴影
+### 3. Video Showcase
+- YouTube video embedding
+- 3D rotation effects
+- Hover animations
+- Apple-style shadows
 
-### 4. 功能特色
-- 专业制作工具
-- 快速工作流
-- 目标受众分析
+### 4. Feature Highlights
+- Professional production tools
+- Fast workflow
+- Target audience analysis
 
-## 🎨 设计特色
+## 🎨 Design Features
 
-### Apple UI设计风格
-- **配色方案**: 使用Apple标准的黑白灰配色
-- **字体**: 采用Apple系统字体栈
-- **圆角**: 大圆角设计元素
-- **阴影**: 多层阴影系统
-- **动画**: 平滑的过渡效果
+### Apple UI Design Style
+- **Color Scheme**: Using Apple's standard black, white, and gray color palette
+- **Typography**: Apple system font stack
+- **Corners**: Large rounded design elements
+- **Shadows**: Multi-layer shadow system
+- **Animations**: Smooth transition effects
 
-### 响应式设计
-- **移动优先**: 从小屏幕开始设计
-- **断点**: 768px和1200px
-- **弹性布局**: 使用Flexbox和Grid
-- **媒体查询**: 针对不同设备优化
+### Responsive Design
+- **Mobile First**: Design starting from small screens
+- **Breakpoints**: 768px and 1200px
+- **Flexible Layout**: Using Flexbox and Grid
+- **Media Queries**: Optimized for different devices
 
-## 🔧 技术实现
+## 🔧 Technical Implementation
 
-### HTML结构
+### HTML Structure
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -96,75 +96,75 @@ open index.html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Short Studio</title>
-    <!-- 图标和样式 -->
+    <!-- Icons and styles -->
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- Navigation -->
     <nav>...</nav>
     
-    <!-- 主页区域 -->
+    <!-- Hero Section -->
     <section class="hero">...</section>
     
-    <!-- 视频展示 -->
+    <!-- Video Showcase -->
     <section class="video-showcase">...</section>
     
-    <!-- 功能特色 -->
+    <!-- Features -->
     <section class="features">...</section>
     
-    <!-- 页脚 -->
+    <!-- Footer -->
     <footer>...</footer>
 </body>
 </html>
 ```
 
-### CSS特性
-- **CSS变量**: 主题色彩管理
-- **Flexbox**: 弹性布局
-- **Grid**: 网格布局系统
-- **动画**: Keyframes动画
-- **滤镜**: 毛玻璃效果
+### CSS Features
+- **CSS Variables**: Theme color management
+- **Flexbox**: Flexible layout
+- **Grid**: Grid layout system
+- **Animations**: Keyframe animations
+- **Filters**: Frosted glass effects
 
-### JavaScript功能
-- **语言切换**: 中英文切换
-- **平滑滚动**: 导航功能
-- **滚动效果**: 导航栏动态效果
+### JavaScript Features
+- **Language Switching**: Chinese-English toggle
+- **Smooth Scrolling**: Navigation functionality
+- **Scroll Effects**: Dynamic navigation bar effects
 
-## 🌐 多语言支持
+## 🌐 Multilingual Support
 
-网站支持中英文切换：
+The website supports Chinese and English switching:
 
-- **中文**: 简体中文界面
-- **英文**: 英文界面
-- **切换**: 点击导航栏右侧按钮
+- **Chinese**: Simplified Chinese interface
+- **English**: English interface
+- **Switching**: Click the button on the right side of the navigation bar
 
-## 📱 移动端优化
+## 📱 Mobile Optimization
 
-在移动设备上：
-- 简化的导航栏
-- 优化的视频显示
-- 触摸友好的交互
-- 适配的字体大小
+On mobile devices:
+- Simplified navigation bar
+- Optimized video display
+- Touch-friendly interactions
+- Adaptive font sizes
 
-## 🔄 更新脚本
+## 🔄 Update Script
 
-项目包含自动更新脚本 `update_github_repo.py`：
+The project includes an automatic update script `update_github_repo.py`:
 
 ```bash
-# 在项目根目录运行
+# Run from project root directory
 python update_github_repo.py
 ```
 
-脚本功能：
-- 检查Git状态
-- 自动添加更改
-- 创建提交
-- 同步远程仓库
-- 推送到GitHub
+Script features:
+- Check Git status
+- Automatically add changes
+- Create commits
+- Sync remote repository
+- Push to GitHub
 
-## 📝 自定义
+## 📝 Customization
 
-### 修改视频
-在 `index.html` 中找到视频展示区域：
+### Modify Video
+Find the video showcase section in `index.html`:
 ```html
 <iframe 
     width="315" 
@@ -178,8 +178,8 @@ python update_github_repo.py
 </iframe>
 ```
 
-### 修改颜色主题
-在CSS中修改颜色变量：
+### Modify Color Theme
+Modify color variables in CSS:
 ```css
 :root {
     --primary-color: #000000;
@@ -189,23 +189,23 @@ python update_github_repo.py
 }
 ```
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交Issue和Pull Request来改进这个项目！
+Issues and Pull Requests are welcome to improve this project!
 
-## 📄 许可证
+## 📄 License
 
-本项目采用MIT许可证。查看 [LICENSE](LICENSE) 文件了解更多信息。
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-## 📞 联系方式
+## 📞 Contact
 
-- 项目地址: [https://github.com/IIIIQIIII/short-studio-web](https://github.com/IIIIQIIII/short-studio-web)
-- 问题反馈: [GitHub Issues](https://github.com/IIIIQIIII/short-studio-web/issues)
+- Project URL: [https://github.com/IIIIQIIII/short-studio-web](https://github.com/IIIIQIIII/short-studio-web)
+- Issues: [GitHub Issues](https://github.com/IIIIQIIII/short-studio-web/issues)
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-感谢所有为这个项目做出贡献的开发者！
+Thanks to all developers who contributed to this project!
 
 ---
 
-**Short Studio** - 用专业工具创作引人入胜的短剧
+**Short Studio** - Create compelling short dramas with professional tools
