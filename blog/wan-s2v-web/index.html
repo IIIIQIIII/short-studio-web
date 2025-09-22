@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Wan-S2V: Audio-Driven Cinematic Video Generation">
+    <meta property="og:title" content="Wan-S2V">
+    <meta property="og:description" content="Wan-S2V: Audio-Driven Cinematic Video Generation">
+    <meta property="og:url" content="https://humanaigc.github.io/wan-s2v-webpage/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/superman.png">
+    <meta property="og:image:width" content="2412">
+    <meta property="og:image:height" content="1394">
+    <meta name="twitter:title" content="Wan-S2V">
+    <meta name="twitter:description" content="Wan-S2V: Audio-Driven Cinematic Video Generation">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/superman.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="keywords" content="Image-to-Video, Audio-Driven Video Generation, AI Video, Cinematic Video">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wan-S2V: Audio-Driven Cinematic Video Generation</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Academicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Unified CSS (Combined from index.css and modern-styles.css) -->
+    <link rel="stylesheet" href="static/css/index.css">
+    
+    <!-- Bulma Framework (Minimal - for layout utilities only) -->
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+</head>
+<body class="custom-scrollbar">
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <div style="width: 50px; height: 50px; border: 3px solid #333; border-top: 3px solid #6366f1; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <p style="color: #fff; margin-top: 20px; font-size: 18px;">正在加载内容...</p>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <!-- Conventional Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-logo">
+                <img src="favicon.svg" alt="Wan-S2V" class="header-logo-img"> Wan-S2V
+            </div>
+            <nav class="header-nav">
+                <a href="https://short.mashijian.com/" target="_blank">Home</a>
+                <a href="#abstract">Abstract</a>
+                <a href="#demo">Demo</a>
+                <a href="#method">Method</a>
+                <a href="#results">Results</a>
+                <a href="https://short.mashijian.com/blog" target="_blank">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero-gradient">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="apple-gradient">
+                    Wan-S2V: Audio-Driven Cinematic Video Generation
+                </h1>
+                <p class="hero-subtitle">
+                    Transform static images and audio into high-quality, cinematic videos with AI
+                </p>
+                <div class="hero-affiliation" data-aos="fade-up" data-aos-delay="100">
+                    <span class="glass-card">
+                        <img data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/pic/wan_logo.png" alt="Tongyi Lab, Alibaba" class="affiliation-logo lazy-load">
+                        Tongyi Lab, Alibaba
+                    </span>
+                </div>
+                <div class="hero-links" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://arxiv.org/abs/2508.18621" target="_blank" class="btn-primary">
+                        <i class="ai ai-arxiv"></i> Paper
+                    </a>
+                    <a href="https://github.com/Wan-Video/Wan2.2" target="_blank" class="btn-primary">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://huggingface.co/Wan-AI/Wan2.2-S2V-14B" target="_blank" class="btn-secondary">
+                        <span class="icon">🤗</span> HF Model
+                    </a>
+                    <a href="https://www.modelscope.cn/models/Wan-AI/Wan2.2-S2V-14B" target="_blank" class="btn-secondary">
+                        <span class="icon">🤖</span> MS Model
+                    </a>
+                </div>
+                <div class="hero-links" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://huggingface.co/spaces/Wan-AI/Wan2.2-S2V" target="_blank" class="btn-secondary">
+                        <span class="icon">🤗</span> HF Space
+                    </a>
+                    <a href="https://www.modelscope.cn/studios/Wan-AI/Wan2.2-S2V" target="_blank" class="btn-secondary">
+                        <span class="icon">🤖</span> MS Studio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section id="abstract" class="section">
+        <div class="container">
+            <div class="glass-card" data-aos="fade-up">
+                <h2 class="gradient-text text-center mb-8">Abstract</h2>
+                <div class="highlight-box">
+                    <p>
+                        Wan-S2V is an AI video generation model that transforms static images and audio into high-quality videos. Our model excels in film and television application scenarios, capable of presenting realistic visual effects, including generating natural facial expressions, body movements, and professional camera work. It supports both full-body and half-body character generation, and can high-quality complete various professional-level content creation needs such as dialogue, singing, and performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="section">
+        <div class="container">
+            <h2 class="gradient-text text-center mb-12" data-aos="fade-up">Image + Audio = Video Generation</h2>
+            
+            <!-- Main Demo -->
+            <div class="demo-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="demo-item glass-card">
+                    <h3 class="text-center mb-4">Input Image</h3>
+                    <div class="video-container">
+                        <img data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/Everybody Wants To Rule the World.png" alt="Input Image" class="lazy-load">
+                    </div>
+                </div>
+                
+                <div class="demo-operator">
+                    <i class="fas fa-plus"></i>
+                </div>
+                
+                <div class="demo-item glass-card">
+                    <h3 class="text-center mb-4">Input Audio</h3>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/audio/Everybody Wants To Rule the World.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+                
+                <div class="demo-operator">
+                    <i class="fas fa-equals"></i>
+                </div>
+                
+                <div class="demo-item glass-card">
+                    <h3 class="text-center mb-4">Generated Video</h3>
+                    <div class="video-container">
+                        <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/banquan/[good]Everybody Wants To Rule the World_Everybody Wants To Rule the World_27250_cfg_4.5_shift_3.mp4">
+                            <source type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-description text-center mt-8" data-aos="fade-up" data-aos-delay="200">
+                <p>
+                    <strong class="purple-text">Wan-S2V</strong> takes a single image and audio input to generate high-quality, synchronized video content
+                </p>
+            </div>
+
+            <!-- Video Examples -->
+            <div class="video-examples mt-16">
+                <div class="video-item" data-aos="fade-up">
+                    <div class="video-container">
+                        <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/banquan/[good]Five Hundred Miles_Five Hundred Miles_27250_.mp4">
+                            <source type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-caption">
+                        <p>Prompt: "In the video, a man is walking beside the railway tracks, singing and expressing his emotions while walking. A train slowly passes by beside him."</p>
+                    </div>
+                </div>
+
+                <div class="video-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="video-container">
+                        <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/1-moive_talk.mp4">
+                            <source type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-caption">
+                        <p>Prompt: "In the video, a woman is talking to the man in front of her. She looks sad, thoughtful and about to cry."</p>
+                    </div>
+                </div>
+
+                <div class="video-grid grid-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-item">
+                        <div class="video-container">
+                            <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/banquan/11.mp4">
+                                <source type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-caption">
+                            <p>Prompt: "In the video, a woman is singing. Her expression is very lyrical and intoxicated with music."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item">
+                        <div class="video-container">
+                            <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/banquan/别让爱掉落.mp4">
+                                <source type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-caption">
+                            <p>Prompt: "The video shows a woman with long hair playing the piano at the seaside. The woman has a long head of silver white hair, and a <span class="highlight-text">flame crown</span> is burning on her head. The girls are singing with deep feelings, and their facial expressions are rich. The woman sat sideways in front of the piano, playing attentively."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section id="method" class="section">
+        <div class="container">
+            <h2 class="gradient-text text-center mb-12" data-aos="fade-up">Method</h2>
+            
+            <div class="method-overview glass-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="method-image-container">
+                    <img data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/pipeline.png" alt="Pipeline Overview" class="lazy-load">
+                </div>
+                <p class="text-center mt-6">Overview of our pipeline</p>
+            </div>
+            
+            <div class="method-audio glass-card mt-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="method-image-container">
+                    <img data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/audio_pipeline.png" alt="Audio Pipeline" class="lazy-load">
+                </div>
+                <p class="text-center mt-6">The pipeline of the audio injection</p>
+            </div>
+            
+            <div class="method-data mt-12" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="gradient-text text-center mb-8">Data Collection</h3>
+                <div class="glass-card">
+                    <div class="method-image-container">
+                        <img data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/pic/sankey_hfm_data.png" alt="Data Collection Pipeline" class="lazy-load">
+                    </div>
+                    <p class="mt-6">
+                        Our data collection strategy combines automated screening of large-scale datasets (OpenHumanVid, Koala36M) with manual curation of high-quality samples. We focus on videos featuring human characters engaged in specific activities like speaking, singing, and dancing, creating a comprehensive dataset of millions of human-centric video samples.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="section">
+        <div class="container">
+            <h2 class="gradient-text text-center mb-12" data-aos="fade-up">Various Generated Videos</h2>
+            
+            <!-- Singing Examples -->
+            <div class="results-category" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-center mb-8">Singing Performance</h3>
+                <div class="video-item">
+                    <div class="video-container">
+                        <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/banquan/Everybody Wants To Rule the World.mp4">
+                            <source type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-caption">
+                        <p>Prompt: "In the video, a woman stood on the deck of a sailing boat and sang loudly. The background was the choppy sea and the thundering sky. It was raining heavily in the sky, the ship swayed, the camera swayed, and the waves splashed everywhere, creating a heroic atmosphere. The woman has long dark hair, part of which is wet by rain. Her expression is serious and firm, her eyes are sharp, and she seems to be staring at the distance or thinking."</p>
+                    </div>
+                </div>
+                
+                <div class="video-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-container">
+                        <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/banquan/乌云中.mp4">
+                            <source type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-caption">
+                        <p>Prompt: "In the video, a boy is sitting on a running train. His eyes are blurred. He is singing softly and tapping the beat with his hands. It may be a scene from an MV movie. The train was moving, and the view passed quickly."</p>
+                    </div>
+                </div>
+                
+                <div class="video-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="video-container">
+                        <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/banquan/i believe i can fly.mp4">
+                            <source type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-caption">
+                        <p>Prompt: "In the video, there is a man's selfie perspective. He glides in the sky in a parachute. He sings happily and looks engaged. The scenery passes around him."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cinematic Examples -->
+            <div class="results-category mt-16" data-aos="fade-up" data-aos-delay="400">
+                <h3 class="text-center mb-8">Cinematic-Grade Audio-Driven</h3>
+                <div class="glass-card mb-8">
+                    <p class="text-center">
+                        Our method is capable of generating film-quality videos, enabling the synthesis of film dialogues and the recreation of narrative scenes.
+                    </p>
+                </div>
+                
+                <div class="video-item">
+                    <div class="video-container">
+                        <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/banquan/[good]crucified_crucified_27150_cfg_4.5_shift_3.mp4">
+                            <source type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-caption">
+                        <p>Prompt: "The video shows a group of nuns singing hymns in the church. The sky emits fluctuating golden light and golden powder falls from the sky. Dressed in traditional black robes and white headscarves, they are neatly arranged in a row with their hands folded in front of their chests. Their expressions are solemn and pious, as if they are conducting some kind of religious ceremony or prayer. The nuns' eyes looked up, showing great concentration and awe, as if they were talking to the gods."</p>
+                    </div>
+                </div>
+                
+                <div class="video-grid grid-2" data-aos="fade-up" data-aos-delay="500">
+                    <div class="video-item">
+                        <div class="video-container">
+                            <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/03-教父_03-教父_1005_shift_3.mp4">
+                                <source type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-caption">
+                            <p>Prompt: "In the video, a man is lying on the sofa with his hands folded on his legs. He is talking with his legs cocked. The lamp flickered. The camera slowly circled, as if it were a movie scene."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item">
+                        <div class="video-container">
+                            <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/10_盗梦空间_10_盗梦空间_1010_shift_3.mp4">
+                                <source type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-caption">
+                            <p>Prompt: "In the video, a man in a suit is sitting on the sofa. He leans forward and seems to want to dissuade the opposite person. He speaks to the opposite person with a serious expression of concern."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Control Examples -->
+            <div class="results-category mt-16" data-aos="fade-up" data-aos-delay="600">
+                <h3 class="text-center mb-8">Enhanced Instruction Following, Motion & Environment Control</h3>
+                <div class="glass-card mb-8">
+                    <p class="text-center">
+                        Our model can generate character actions and environmental factors in videos according to instructions, thereby creating video content that better fits the theme.
+                    </p>
+                </div>
+                
+                <div class="video-grid grid-2">
+                    <div class="video-item" data-aos="fade-up" data-aos-delay="700">
+                        <div class="video-container">
+                            <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/banquan/singing in the rain.mp4">
+                                <source type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-caption">
+                            <p>Prompt: "In the video, it is raining heavily. It shows a man who is topless and has clear muscle lines, showing good physical fitness and strength. The rain wet his whole body. His arms were open and he was singing happily. His expression was engaged and his hands were slowly extended. The man's head is slightly raised, his eyes are upward, and his mouth is slightly open. His expression was full of surprise and expectation, giving a feeling that something important was about to happen."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item" data-aos="fade-up" data-aos-delay="800">
+                        <div class="video-container">
+                            <video controls class="lazy-video" data-src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/video/单人-说话-动作控制-音频align.mp4">
+                                <source type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-caption">
+                            <p>Prompt: "In the video, a man is holding an apple and talking, he takes a bite of the apple."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantitative Comparison Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="gradient-text text-center mb-12" data-aos="fade-up">Quantitative Comparison</h2>
+            
+            <div class="glass-card mb-8" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-center">
+                    We conduct comprehensive quantitative comparisons with state-of-the-art methods across multiple evaluation metrics.
+                </p>
+            </div>
+            
+            <div class="table-container glass-card" data-aos="fade-up" data-aos-delay="200">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>FID↓</th>
+                            <th>FVD↓</th>
+                            <th>SSIM↑</th>
+                            <th>PSNR↑</th>
+                            <th>Sync-C↑</th>
+                            <th>EFID↓</th>
+                            <th>HKC↑</th>
+                            <th>HKV↑</th>
+                            <th>CSIM↑</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EchoMimicV2</td>
+                            <td>33.42</td>
+                            <td>217.71</td>
+                            <td>0.662</td>
+                            <td>18.17</td>
+                            <td>4.44</td>
+                            <td>1.052</td>
+                            <td>0.425</td>
+                            <td>0.150</td>
+                            <td>0.519</td>
+                        </tr>
+                        <tr>
+                            <td>MimicMotion</td>
+                            <td>25.38</td>
+                            <td>248.95</td>
+                            <td>0.585</td>
+                            <td>17.15</td>
+                            <td>2.68</td>
+                            <td>0.617</td>
+                            <td>0.356</td>
+                            <td>0.169</td>
+                            <td>0.608</td>
+                        </tr>
+                        <tr>
+                            <td>EMO2</td>
+                            <td>27.28</td>
+                            <td><strong>129.41</strong></td>
+                            <td>0.662</td>
+                            <td>17.75</td>
+                            <td>4.58</td>
+                            <td><strong>0.218</strong></td>
+                            <td><strong>0.553</strong></td>
+                            <td><strong>0.198</strong></td>
+                            <td>0.650</td>
+                        </tr>
+                        <tr>
+                            <td>FantasyTalking</td>
+                            <td>22.60</td>
+                            <td>178.12</td>
+                            <td>0.703</td>
+                            <td>19.63</td>
+                            <td>3.00</td>
+                            <td>0.366</td>
+                            <td>0.281</td>
+                            <td>0.087</td>
+                            <td>0.626</td>
+                        </tr>
+                        <tr>
+                            <td>Hunyuan-Avatar</td>
+                            <td>18.07</td>
+                            <td>145.77</td>
+                            <td>0.670</td>
+                            <td>18.16</td>
+                            <td><strong>4.71</strong></td>
+                            <td>0.7082</td>
+                            <td>0.379</td>
+                            <td>0.145</td>
+                            <td>0.583</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Wan2.2-S2V-14B</strong></td>
+                            <td><strong>15.66</strong></td>
+                            <td>129.57</td>
+                            <td><strong>0.734</strong></td>
+                            <td><strong>20.49</strong></td>
+                            <td>4.51</td>
+                            <td>0.283</td>
+                            <td>0.435</td>
+                            <td>0.142</td>
+                            <td><strong>0.677</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="glass-card mt-8" data-aos="fade-up" data-aos-delay="300">
+                <p class="text-center">
+                    <strong>Table 1:</strong> According to actual measurement data, Wan2.2-S2V achieved the best or near-best performance among similar models in core metrics such as FID (video quality), EFID (expression authenticity), and CSIM (identity consistency).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="content">
+                <p>© 2025 Short Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+    
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+        
+        .lazy-video {
+            min-height: 200px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .lazy-video::before {
+            content: '🎬';
+            font-size: 48px;
+            opacity: 0.5;
+        }
+        
+        .lazy-video.loaded::before {
+            content: none;
+        }
+    </style>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Text-first loading strategy
+        document.addEventListener('DOMContentLoaded', function() {
+            // First, hide loading indicator and show text content immediately
+            setTimeout(() => {
+                const loadingIndicator = document.getElementById('loadingIndicator');
+                if (loadingIndicator) {
+                    loadingIndicator.style.display = 'none';
+                }
+            }, 500);
+            
+            // Load images after a short delay
+            setTimeout(loadImages, 1000);
+            
+            // Load videos after a longer delay
+            setTimeout(loadVideos, 2000);
+        });
+        
+        function loadImages() {
+            const lazyImages = document.querySelectorAll('img.lazy-load');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
+        
+        function loadVideos() {
+            const lazyVideos = document.querySelectorAll('video.lazy-video');
+            const videoObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const video = entry.target;
+                        const source = video.querySelector('source');
+                        if (source) {
+                            source.src = video.dataset.src;
+                            video.load();
+                            video.classList.add('loaded');
+                        }
+                        observer.unobserve(video);
+                    }
+                });
+            });
+            
+            lazyVideos.forEach(video => videoObserver.observe(video));
+        }
+    </script>
+</body>
+</html>

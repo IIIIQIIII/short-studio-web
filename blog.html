@@ -599,6 +599,21 @@
 
                 <article class="blog-card">
                     <div class="blog-image">
+                        <img src="https://raw.githubusercontent.com/HumanAIGC/wan-s2v-webpage/refs/heads/main/content/v3/pipeline.png" alt="Wan-S2V Pipeline" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="blog-content-inner">
+                        <div class="blog-meta">
+                            <span class="blog-date" data-en="Sep 22, 2024" data-zh="2024年9月22日">Sep 22, 2024</span>
+                            <span class="blog-category" data-en="Video Generation" data-zh="视频生成">Video Generation</span>
+                        </div>
+                        <h3 class="blog-post-title" data-en="Wan-S2V: Advanced Image-to-Video Generation Technology" data-zh="Wan-S2V：先进图像到视频生成技术">Wan-S2V: Advanced Image-to-Video Generation Technology</h3>
+                        <p class="blog-excerpt" data-en="Explore Wan-S2V, a cutting-edge technology for generating high-quality videos from static images with advanced AI algorithms." data-zh="探索 Wan-S2V，一种使用先进AI算法从静态图像生成高质量视频的前沿技术。">Explore Wan-S2V, a cutting-edge technology for generating high-quality videos from static images with advanced AI algorithms.</p>
+                        <a href="blog/wan-s2v-web/index.html" class="blog-read-more" data-en="Read More" data-zh="阅读更多">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
                         <img src="https://github.com/HumanAIGC/wan-animate/raw/refs/heads/main/content/aa/arch.png" alt="Wan-Animate Architecture" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="blog-content-inner">
@@ -667,9 +682,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             const readMoreLinks = document.querySelectorAll('.blog-read-more');
             readMoreLinks.forEach(link => {
-                // Check if this is the Wan-Animate link
-                if (link.getAttribute('href') === 'blog/wan-animate/index.html') {
-                    // Let the Wan-Animate link work normally
+                // Check if this is the Wan-Animate or Wan-S2V link
+                const href = link.getAttribute('href');
+                if (href === 'blog/wan-animate/index.html' || href === 'blog/wan-s2v-web/index.html') {
+                    // Let these links work normally
                     return;
                 }
                 
