@@ -626,6 +626,21 @@
                         <a href="blog/wan-animate/index.html" class="blog-read-more" data-en="Read More" data-zh="阅读更多">Read More</a>
                     </div>
                 </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://raw.githubusercontent.com/HumanAIGC/animate-anyone-2/refs/heads/main/static2/images/motivation.png" alt="Animate Anyone 2 Motivation" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="blog-content-inner">
+                        <div class="blog-meta">
+                            <span class="blog-date" data-en="Sep 23, 2024" data-zh="2024年9月23日">Sep 23, 2024</span>
+                            <span class="blog-category" data-en="Animation" data-zh="动画">Animation</span>
+                        </div>
+                        <h3 class="blog-post-title" data-en="Animate Anyone 2: Advanced Text-to-Video Character Animation" data-zh="Animate Anyone 2：高级文本到视频角色动画技术">Animate Anyone 2: Advanced Text-to-Video Character Animation</h3>
+                        <p class="blog-excerpt" data-en="Discover Animate Anyone 2, the next-generation model for generating high-fidelity character animations from text and pose references, enabling precise control over motion and expression in video generation." data-zh="探索 Animate Anyone 2，下一代模型，用于从文本和姿态参考生成高保真角色动画，在视频生成中实现对动作和表情的精确控制。">Discover Animate Anyone 2, the next-generation model for generating high-fidelity character animations from text and pose references, enabling precise control over motion and expression in video generation.</p>
+                        <a href="blog/animate-anyone-2/index.html" class="blog-read-more" data-en="Read More" data-zh="阅读更多">Read More</a>
+                    </div>
+                </article>
             </div>
 
             <div class="back-to-home">
@@ -682,9 +697,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             const readMoreLinks = document.querySelectorAll('.blog-read-more');
             readMoreLinks.forEach(link => {
-                // Check if this is the Wan-Animate or Wan-S2V link
+                // Check if this is the Wan-Animate, Wan-S2V, or Animate Anyone 2 link
                 const href = link.getAttribute('href');
-                if (href === 'blog/wan-animate/index.html' || href === 'blog/wan-s2v-web/index.html') {
+                if (href === 'blog/wan-animate/index.html' || href === 'blog/wan-s2v-web/index.html' || href === 'blog/animate-anyone-2/index.html') {
                     // Let these links work normally
                     return;
                 }
