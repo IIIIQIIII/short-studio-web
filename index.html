@@ -750,16 +750,16 @@
 
                 <article class="blog-card">
                     <div class="blog-image">
-                        <div class="blog-image-placeholder">🎭</div>
+                        <img src="https://huggingface.co/datasets/FutureMa/creategen/resolve/main/man_and_woman_housework.png" alt="Behind the Scenes" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span class="blog-date" data-en="Dec 10, 2024" data-zh="2024年12月10日">Dec 10, 2024</span>
-                            <span class="blog-category" data-zh="幕后花絮">Behind the Scenes</span>
+                            <span class="blog-date" data-en="Sep 21, 2025" data-zh="2025年9月21日">Sep 21, 2025</span>
+                            <span class="blog-category" data-en="Behind the Scenes" data-zh="幕后花絮">Behind the Scenes</span>
                         </div>
                         <h3 class="blog-post-title" data-en="Behind the Scenes: Making of 'I Was a Stepmother in the 80s'" data-zh="幕后花絮：《我在八零年代当后妈》的制作">Behind the Scenes: Making of 'I Was a Stepmother in the 80s'</h3>
                         <p class="blog-excerpt" data-en="An exclusive look at the creative process and challenges behind our latest stop-motion animation masterpiece." data-zh="独家了解我们最新定格动画杰作背后的创作过程和挑战。">An exclusive look at the creative process and challenges behind our latest stop-motion animation masterpiece.</p>
-                        <a href="#" class="blog-read-more" data-en="Read More" data-zh="阅读更多">Read More</a>
+                        <a href="blog/behind-the-scenes/index.html" class="blog-read-more" data-en="Read More" data-zh="阅读更多">Read More</a>
                     </div>
                 </article>
 
@@ -769,7 +769,7 @@
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span class="blog-date" data-en="Sep 22, 2024" data-zh="2024年9月22日">Sep 22, 2024</span>
+                            <span class="blog-date" data-en="Sep 17, 2025" data-zh="2025年9月17日">Sep 17, 2025</span>
                             <span class="blog-category" data-en="Animation" data-zh="动画">Animation</span>
                         </div>
                         <h3 class="blog-post-title" data-en="Wan-Animate: Advanced Character Animation Technology" data-zh="Wan-Animate：先进角色动画技术">Wan-Animate: Advanced Character Animation Technology</h3>
@@ -885,9 +885,10 @@
             // Add click handlers for blog read more links
             const readMoreLinks = document.querySelectorAll('.blog-read-more');
             readMoreLinks.forEach(link => {
-                // Check if this is the Wan-Animate link
-                if (link.getAttribute('href') === 'blog/wan-animate/index.html') {
-                    // Let the Wan-Animate link work normally
+                // Check if this is a real blog post link
+                const href = link.getAttribute('href');
+                if (href === 'blog/wan-animate/index.html' || href === 'blog/behind-the-scenes/index.html') {
+                    // Let these links work normally
                     return;
                 }
                 
